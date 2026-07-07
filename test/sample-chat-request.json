@@ -1,0 +1,16 @@
+{
+  "model": "MiniMax-M2.7",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Ban la tro ly agent, tra loi ngan gon va chinh xac."
+    },
+    {
+      "role": "user",
+      "content": "Xin chao, tra loi ngan gon bang tieng Viet"
+    }
+  ],
+  "temperature": 0.3,
+  "max_tokens": 512,
+  "stream": false
+}

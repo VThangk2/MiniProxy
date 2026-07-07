@@ -1,0 +1,45 @@
+{
+  "name": "ucx-ai-proxy",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true
+  },
+  "services": [
+    {
+      "binding": "UPSTREAM_WORKER",
+      "service": "ucx-minimax-proxy"
+    }
+  ],
+  "vars": {
+    "MINIMAX_BASE_URL": "https://api.minimax.io/v1",
+    "RATE_LIMIT_PER_MINUTE": "30",
+    "DAILY_REQUEST_LIMIT": "500",
+    "MAX_INPUT_CHARS": "10000",
+    "MAX_TOKENS_LIMIT": "2048",
+    "ALLOWED_MODELS": "MiniMax-M2.7",
+    "UPSTREAM_TIMEOUT_MS": "60000",
+    "LOG_LEVEL": "info",
+    "LOG_REQUEST_BODY": "false",
+    "CORS_ORIGIN": "*",
+    "UCX_ALLOWED_IPS": ""
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RATE_LIMITER",
+        "class_name": "RateLimiter"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "RateLimiter"
+      ]
+    }
+  ]
+}

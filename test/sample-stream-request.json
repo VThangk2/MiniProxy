@@ -1,0 +1,12 @@
+{
+  "model": "MiniMax-M2.7",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Viet 5 gach dau dong ve loi ich cua agent assistant"
+    }
+  ],
+  "temperature": 0.3,
+  "max_tokens": 512,
+  "stream": true
+}
